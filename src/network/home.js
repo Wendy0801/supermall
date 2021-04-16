@@ -1,8 +1,32 @@
 import {request} from "./request";
 
+// export function getHomeMultidata(){
+//   return request({
+//     url: '/home/multidata'
+//   })
+// }
+//
+// export function getHomeGoods(type, page){
+//   return request({
+//     url: '/home/data',
+//     params: { type,page }
+//   })
+// }
+
 export function getHomeMultidata(){
   return request({
-    url: '/home/multidata'
+    url: '/api/api/custom/txt/bXVsdGlkYXRhLmpzb24=',
+  })
+}
+
+export function getHomeGoods(type, page){
+  return request({
+    url: '/api/api/custom/txt/ZGF0YS5qc29u',
+    params: { type,page },
+  }).then(res =>{
+    let r = [];
+    r = res.data.goods.list.filter((item)=> item.type === type)
+    return r;
   })
 }
 

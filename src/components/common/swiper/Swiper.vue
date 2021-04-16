@@ -53,7 +53,7 @@ export default {
 
       // 开启定时器
       this.startTimer();
-    }, 100)
+    }, 300)
   },
   methods:{
     startTimer(){
