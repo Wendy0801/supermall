@@ -1,5 +1,5 @@
 <template>
-  <div class="goods-item">
+  <div class="goods-item" @click="itemClick">
     <img :src="goodsItem.image" :key="goodsItem.image" @load="imageLoad">
     <div class="goods-info">
       <span>{{goodsItem.title}}</span>
@@ -27,6 +27,18 @@ export default {
   methods:{
     imageLoad(){
       this.$bus.$emit('itemImageLoad')
+    },
+    itemClick(){
+      //两种路由的传递方式
+      //1.动态路由
+      this.$router.push('detail/' + this.goodsItem.id)
+      //1.query方式
+      // this.$router.push({
+      //   path:'detail',
+      //   query:{
+      //     id: this.goodsItem.id
+      //   }
+      // })
     }
   }
 }

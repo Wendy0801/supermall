@@ -100,4 +100,17 @@ module.exports = {
   （1）当对象消失的时候，都会被销毁，执行destroyed
   （2）在路由router-view 使用 <keep-alive> 让路由不要随意销毁，不执行destroyed
   （3）使用keep-alive 时，会执行两个函数 ： activated （进来时执行） 和 deactivated （离开时执行）
+  （4）使用keep-alive的时候，可以通过exclude属性排除需要重新刷新的组件
+8.两种路由的传递方式
+      (1).动态路由
+      this.$router.push('detail/' + this.goodsItem.id)
+      (2).query方式
+      this.$router.push({
+        path:'detail',
+        query:{
+          id: this.goodsItem.id
+        }
+      })
+9.判断一个对象是否为空对象： const obj = {} ； Object.key(obj).length === 0
+
 ```
