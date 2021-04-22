@@ -113,4 +113,19 @@ module.exports = {
       })
 9.判断一个对象是否为空对象： const obj = {} ； Object.key(obj).length === 0
 
+
+10.mixin 合并代码 (抽取相同代码)
+
+11.$nextTick: 获取数据后，子组件dom元素渲染完后， 会通过下一帧 $nextTick(()=>{}) 回调说明dom 渲染完
+
+![img.png](img.png)
+
+![img_1.png](img_1.png)
+```
+
+## 四： 生命周期
+```
+created:在模板渲染成html前调用，即通常初始化某些属性值，然后再渲染成视图。
+mounted:在模板渲染成html后调用，通常是初始化页面完成后，再对html的dom节点进行一些需要的操作。
+updated: 有数据变化时候执行
 ```

@@ -31,7 +31,7 @@ import HomeRecommend from "./childComps/HomeRecommend";
 
 
 import {getHomeMultidata, getHomeGoods} from "network/home";
-import { debounce } from "common/utils"
+import {itemImageLoadMixin} from "common/mixins";
 
 export default {
   name: "home",
@@ -71,6 +71,10 @@ export default {
   },
   deactivated() {
     this.saveY = this.$refs.scroll.getScrollY();
+
+
+    //取消全局事件的监听
+    this.$bus.$off('itemImageLoad', this.itemImageListener)
   },
   created() {
     this.getHomeMultidata();
@@ -79,12 +83,9 @@ export default {
     this.getHomeGoods('sell');
   },
   mounted() {
-    //监听子组件图片加载
-    const refresh = debounce(this.$refs.scroll.refresh, 200)
-    this.$bus.$on('itemImageLoad', () =>{
-      refresh();
-    })
+    console.log("mounted");
   },
+  mixins: [itemImageLoadMixin],
   computed:{
     showGoods(){
       return  this.goods[this.currentType].list
