@@ -133,6 +133,10 @@ module.exports = {
 16.vue-lazyload
 
 17.px2vw-css
+18.Vue里面router-link在电脑上有用，在安卓上没反应怎么解决？
+答：Vue路由在Android机上有问题，babel问题，安装babel polypill插件解决。
+19.Vue2中注册在router-link上事件无效解决方法
+答： 使用@click.native。原因：router-link会阻止click事件，.native指直接监听一个原生事件。
 
 ```
 
