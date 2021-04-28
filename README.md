@@ -85,6 +85,8 @@ module.exports = {
 （3）@kekup.enter 监听键帽
 （4）@click.once 某些事件只监听一次
 （5）@click.native 监听一个组件的原生事件事，必须对应事件上加上.native才能监听
+ (6）@click.capture：与事件冒泡的方向相反，事件捕获由外到内；
+ (7）@click.self：只会触发自己范围内的事件，不包含子元素；
 
 3.原生监听图片的加载 img.onload = function(){},vue中监听图片加载@load = '方法'
 
