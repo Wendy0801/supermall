@@ -32,6 +32,7 @@ httpbing.org   -----网络请求的模拟
 ```
 开始新项目：
 1.创建git仓库
+创建本地仓库的就是git init
 git remote add origin https://github.com/Wendy0801/supermall.git
 git push -u origin master
 2.划分目录结构
