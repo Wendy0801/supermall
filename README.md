@@ -118,9 +118,19 @@ module.exports = {
 
 11.$nextTick: 获取数据后，子组件dom元素渲染完后， 会通过下一帧 $nextTick(()=>{}) 回调说明dom 渲染完
 
-![img.png](img.png)
 
-![img_1.png](img_1.png)
+12. Number.MAX_VALUE  数字的最大值
+
+13. mapGetters, mapActions 组件和vuex 的映射
+
+14. Action 可以返回一个promise
+
+15.toast 插件的封装
+
+16.vue-lazyload
+
+17.px2vw-css
+
 ```
 
 ## 四： 生命周期

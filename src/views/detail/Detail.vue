@@ -3,6 +3,7 @@
     <detail-nav-bar></detail-nav-bar>
     <detail-swiper :topImage="detailSwiper"></detail-swiper>
     {{time | showTime}}
+    <button @click="btnClick">show</button>
   </div>
 </template>
 
@@ -38,6 +39,11 @@ export default {
     getGoodsDetail(this.id).then(res => {
       this.detailSwiper = res.imageList;
     })
+  },
+  methods:{
+    btnClick(){
+      this.$toast.show('hhhhhhhhhhhhhhhhhhhhhhhhhhh');
+    }
   }
 
 }
@@ -48,7 +54,7 @@ export default {
 </style>
 
 <!--滚动到对应的主题：-->
-<!--1.获取所有主题的offsetTop-->
+<!--1.获取所有主题的offsetTop   themeTopY【0， ref.$el.offsetTop.....】-->
 <!--2.问题：在哪里才能获取正确的offsetTop-->
 <!--  （1）created 肯定不行，html 还没渲染出来-->
 <!--  （2）mounted 也是不行， 数据还没有获取到-->
@@ -58,3 +64,5 @@ export default {
 
 
 <!--滚动到对应的位置，主题指向那个-->
+<!--1.监听better-scroll的滚动事件-->
+<!--2.position 和主题的offsetTop themeTopY进行对比-->
