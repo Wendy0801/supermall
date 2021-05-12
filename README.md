@@ -131,6 +131,11 @@ module.exports = {
 
 17.px2vw-css
 
+18.runtime-compiler 和 runtime-only 的区别
+runtime-compiler ： template --- ast（抽象语法树） --- render --- vdom --- UI
+runtime-only: render --- vdom --- UI (1.性能更好，2代码量更少)
+注意：组件中的template是由我们安装的 vue-template-compiler 编译 成render函数了
+
 ```
 
 ## 四： 生命周期
