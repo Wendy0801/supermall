@@ -32,6 +32,7 @@ httpbing.org   -----网络请求的模拟
 ```
 开始新项目：
 1.创建git仓库
+创建本地仓库的就是git init
 git remote add origin https://github.com/Wendy0801/supermall.git
 git push -u origin master
 2.划分目录结构
@@ -84,6 +85,8 @@ module.exports = {
 （3）@kekup.enter 监听键帽
 （4）@click.once 某些事件只监听一次
 （5）@click.native 监听一个组件的原生事件事，必须对应事件上加上.native才能监听
+ (6）@click.capture：与事件冒泡的方向相反，事件捕获由外到内；
+ (7）@click.self：只会触发自己范围内的事件，不包含子元素；
 
 3.原生监听图片的加载 img.onload = function(){},vue中监听图片加载@load = '方法'
 
@@ -130,6 +133,10 @@ module.exports = {
 16.vue-lazyload
 
 17.px2vw-css
+18.Vue里面router-link在电脑上有用，在安卓上没反应怎么解决？
+答：Vue路由在Android机上有问题，babel问题，安装babel polypill插件解决。
+19.Vue2中注册在router-link上事件无效解决方法
+答： 使用@click.native。原因：router-link会阻止click事件，.native指直接监听一个原生事件。
 
 18.runtime-compiler 和 runtime-only 的区别
 runtime-compiler ： template --- ast（抽象语法树） --- render --- vdom --- UI
